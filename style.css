@@ -1,34 +1,52 @@
-/* Reset and base */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #00ffa2;
+  --card-bg: #1f1f1f;
+  --sec-bg: #0f1621;
+  --bar-bg: #333;
+  --soft-bg: #092d29;
+  --input-bg: #1d2a28;
+  --shadow: #00ffa2cc;
+}
+
+/* Light Mode Overrides */
+body.light-mode {
+  --bg-color: #f5f5f5;
+  --text-color: #121212;
+  --accent-color: #007f5f;
+  --card-bg: #fff;
+  --sec-bg: #e0f8ee;
+  --bar-bg: #e8e8e8;
+  --soft-bg: #ccffe0;
+  --input-bg: #e9f5f0;
+  --shadow: #92fec9bb;
 }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
 }
 
 a {
-  color: #1de9b6;
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #00ffa2;
+  color: #00b382;
 }
 
 .navbar {
   position: sticky;
   top: 0;
-  background: rgba(18, 18, 18, 0.9);
+  background: rgba(18, 18, 18, 0.86);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,7 +59,7 @@ a:hover {
   font-size: 1.8rem;
   font-weight: 900;
   font-family: "Courier New", Courier, monospace;
-  color: #00ffa2;
+  color: var(--accent-color);
   cursor: default;
   user-select: none;
 }
@@ -55,14 +73,14 @@ a:hover {
 .nav-link {
   font-size: 1rem;
   font-weight: 600;
-  color: #bfbfbf;
+  color: var(--text-color);
   position: relative;
   padding: 0.25rem 0;
 }
 
 .nav-link.active,
 .nav-link:hover {
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .nav-link.active::after,
@@ -71,10 +89,48 @@ a:hover {
   position: absolute;
   width: 100%;
   height: 2px;
-  background: #00ffa2;
+  background: var(--accent-color);
   bottom: -6px;
   left: 0;
   border-radius: 2px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  margin-left: 1.5rem;
+}
+.switch input { display: none; }
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #888;
+  border-radius: 24px;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px; width: 18px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: var(--accent-color);
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+.slider.round {
+  border-radius: 24px;
+}
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .home-section {
@@ -88,17 +144,16 @@ a:hover {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-/* UPDATED PROFILE PHOTO - FULLY RESPONSIVE */
 .profile-photo {
-  width: 45vw;           /* Fluid width: 25% of screen */
-  max-width: 270px;      /* Prevents being too big on desktop */
-  height: 27vw;          /* Keeps aspect ratio square */
-  max-height: 270px;     /* Prevents stretching on desktop */
-  border-radius: 60%;
-  background-image: url('Image.jpg'); /* Ensure this matches your file name */
+  width: 40vw;
+  max-width: 350px;
+  height: 40vw;
+  max-height: 350px;
+  border-radius: 50%;
+  background-image: url('Image.jpg'); /* Place your exact photo file here */
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 20px #00ffa2aa;
+  box-shadow: 0 0 28px var(--shadow);
   animation: float 3s ease-in-out infinite;
   display: block;
   margin: 0 auto;
@@ -106,29 +161,25 @@ a:hover {
 
 @media screen and (max-width: 768px) {
   .profile-photo {
-    width: 40vw;
-    max-width: 180px;
-    height: 40vw;
-    max-height: 180px;
+    width: 60vw;
+    max-width: 240px;
+    height: 60vw;
+    max-height: 240px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .profile-photo {
-    width: 50vw;
-    max-width: 140px;
-    height: 50vw;
-    max-height: 140px;
+    width: 65vw;
+    max-width: 170px;
+    height: 65vw;
+    max-height: 170px;
   }
 }
 
 @keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+  0%, 100% {transform: translateY(0);}
+  50% {transform: translateY(-15px);}
 }
 
 .intro-text {
@@ -138,7 +189,7 @@ a:hover {
 
 .intro-text h1 {
   font-size: 3rem;
-  color: #00ffa2;
+  color: var(--accent-color);
   margin-bottom: 0.3rem;
 }
 
@@ -146,7 +197,7 @@ a:hover {
   font-size: 1.6rem;
   height: 35px;
   margin-bottom: 1.2rem;
-  color: #c1fff0;
+  color: #53ecd2;
   font-weight: 600;
   min-height: 1.6rem;
 }
@@ -159,8 +210,8 @@ a:hover {
 }
 
 .btn {
-  background-color: #00ffa2;
-  color: #121212;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
   font-weight: 700;
@@ -186,7 +237,7 @@ a:hover {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .projects-grid {
@@ -196,21 +247,21 @@ a:hover {
 }
 
 .project-card {
-  background: #1f1f1f;
+  background: var(--card-bg);
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0 0 15px #00ffa233;
+  box-shadow: 0 0 15px var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 0 25px #00ffa2cc;
+  box-shadow: 0 0 25px var(--accent-color);
   transform: translateY(-8px);
 }
 
 .project-card h3 {
   margin-bottom: 0.8rem;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .project-card p {
@@ -221,17 +272,17 @@ a:hover {
 
 .project-card a {
   font-weight: 700;
-  color: #00ffa2;
+  color: var(--accent-color);
   border-bottom: 1.5px solid transparent;
 }
 
 .project-card a:hover {
-  border-color: #00ffa2;
+  border-color: var(--accent-color);
 }
 
 /* Skills Section */
 .skills-section {
-  background: #0f1621;
+  background: var(--sec-bg);
   padding: 4rem 2rem;
   max-width: 1100px;
   margin: auto;
@@ -242,7 +293,7 @@ a:hover {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .skills-grid {
@@ -254,7 +305,7 @@ a:hover {
 }
 
 .skill {
-  background: #1a1a1a;
+  background: var(--card-bg);
   border-radius: 8px;
   padding: 1rem;
 }
@@ -262,12 +313,12 @@ a:hover {
 .skill h4 {
   margin-bottom: 0.4rem;
   font-weight: 600;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .skill-bar {
   width: 100%;
-  background: #333;
+  background: var(--bar-bg);
   border-radius: 15px;
   height: 12px;
   overflow: hidden;
@@ -275,7 +326,7 @@ a:hover {
 
 .skill-bar .fill {
   height: 12px;
-  background: #00ffa2;
+  background: var(--accent-color);
   width: 0;
   animation: fillBar 1.5s forwards;
 }
@@ -299,7 +350,7 @@ a:hover {
 }
 
 .soft-skills li {
-  background: #092d29;
+  background: var(--soft-bg);
   padding: 0.4rem 1rem;
   border-radius: 25px;
   font-weight: 600;
@@ -318,11 +369,11 @@ a:hover {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 .timeline {
-  border-left: 3px solid #00ffa2;
+  border-left: 3px solid var(--accent-color);
   margin-left: 1rem;
   padding-left: 2rem;
 }
@@ -339,7 +390,7 @@ a:hover {
   top: 5px;
   height: 15px;
   width: 15px;
-  background: #00ffa2;
+  background: var(--accent-color);
   border-radius: 50%;
 }
 
@@ -365,12 +416,17 @@ a:hover {
   text-align: center;
 }
 
+body.light-mode .certifications-section {
+  background: #e0f8ee;
+  color: #007f5f;
+}
+
 .certifications-section h2 {
-  color: #00ffa2;
+  color: var(--accent-color);
   margin-bottom: 1.5rem;
 }
 
-certifications-section ul {
+.certifications-section ul {
   list-style: none;
 }
 
@@ -379,7 +435,7 @@ certifications-section ul {
 }
 
 .certifications-section a {
-  color: #00ffa2;
+  color: var(--accent-color);
   font-weight: 700;
 }
 
@@ -395,14 +451,14 @@ certifications-section ul {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
-  color: #00ffa2;
+  color: var(--accent-color);
 }
 
 form {
-  background: #1d2a28;
+  background: var(--input-bg);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px #00ffa233;
+  box-shadow: 0 0 20px var(--shadow);
 }
 
 .form-group {
@@ -423,7 +479,14 @@ textarea {
   border-radius: 8px;
   border: none;
   font-size: 1rem;
+  background: #1a2222;
+  color: var(--text-color);
   resize: none;
+}
+body.light-mode input,
+body.light-mode textarea {
+  background: #f5f5f5;
+  color: #222;
 }
 
 input:focus,
@@ -454,17 +517,17 @@ textarea:focus {
 .social-links a {
   font-weight: 700;
   font-size: 1.25rem;
-  color: #00ffa2;
+  color: var(--accent-color);
   text-decoration: none;
   padding: 0.3rem 0.7rem;
   border-radius: 8px;
-  background-color: #092c21;
+  background-color: var(--soft-bg);
   transition: background-color 0.3s ease;
 }
 
 .social-links a:hover {
-  background-color: #00dda9;
-  color: #121212;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
 }
 
 /* Footer */
@@ -472,7 +535,7 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  background: #121212;
+  background: var(--bg-color);
   color: #777;
 }
 
@@ -481,18 +544,16 @@ footer {
   .home-section {
     flex-direction: column;
   }
-
   .intro-text h1 {
     font-size: 2.4rem;
     text-align: center;
   }
-
   .intro-text p {
     text-align: center;
   }
-
   .nav-links {
-    display: none; /* add a hamburger menu here for mobile if needed */
+    display: none; /* add a hamburger menu for mobile if needed */
   }
 }
+
 

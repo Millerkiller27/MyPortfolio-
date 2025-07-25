@@ -90,11 +90,11 @@ a:hover {
 
 /* UPDATED PROFILE PHOTO - FULLY RESPONSIVE */
 .profile-photo {
-  width: 25vw;           /* Fluid width: 25% of screen */
-  max-width: 250px;      /* Prevents being too big on desktop */
-  height: 25vw;          /* Keeps aspect ratio square */
-  max-height: 250px;     /* Prevents stretching on desktop */
-  border-radius: 50%;
+  width: 45vw;           /* Fluid width: 25% of screen */
+  max-width: 270px;      /* Prevents being too big on desktop */
+  height: 27vw;          /* Keeps aspect ratio square */
+  max-height: 270px;     /* Prevents stretching on desktop */
+  border-radius: 60%;
   background-image: url('Image.jpg'); /* Ensure this matches your file name */
   background-size: cover;
   background-position: center;

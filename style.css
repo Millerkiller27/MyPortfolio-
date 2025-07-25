@@ -10,7 +10,7 @@
   --shadow: #00ffa2cc;
 }
 
-
+/* Light Mode Variables */
 body.light-mode {
   --bg-color: #f5f5f5;
   --text-color: #121212;
@@ -37,7 +37,6 @@ a {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a:hover {
   color: #00b382;
 }
@@ -46,7 +45,7 @@ a:hover {
   position: sticky;
   top: 0;
   background: rgba(18, 18, 18, 0.86);
-  backdrop-filter: blur(4px);
+  backdrop-filter: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,7 +68,6 @@ a:hover {
   display: flex;
   gap: 1.25rem;
 }
-
 .nav-link {
   font-size: 1rem;
   font-weight: 600;
@@ -77,12 +75,10 @@ a:hover {
   position: relative;
   padding: 0.25rem 0;
 }
-
 .nav-link.active,
 .nav-link:hover {
   color: var(--accent-color);
 }
-
 .nav-link.active::after,
 .nav-link:hover::after {
   content: '';
@@ -167,7 +163,6 @@ input:checked + .slider:before {
     max-height: 240px;
   }
 }
-
 @media screen and (max-width: 480px) {
   .profile-photo {
     width: 65vw;
@@ -176,7 +171,6 @@ input:checked + .slider:before {
     max-height: 170px;
   }
 }
-
 @keyframes float {
   0%, 100% {transform: translateY(0);}
   50% {transform: translateY(-15px);}
@@ -192,7 +186,6 @@ input:checked + .slider:before {
   color: var(--accent-color);
   margin-bottom: 0.3rem;
 }
-
 .intro-text h2 {
   font-size: 1.6rem;
   height: 35px;
@@ -201,7 +194,6 @@ input:checked + .slider:before {
   font-weight: 600;
   min-height: 1.6rem;
 }
-
 .intro-text p {
   font-size: 1.1rem;
   color: #bbb;
@@ -221,7 +213,6 @@ input:checked + .slider:before {
   display: inline-block;
   text-align: center;
 }
-
 .btn:hover {
   background-color: #00cc7a;
 }
@@ -231,21 +222,19 @@ input:checked + .slider:before {
   padding: 4rem 2rem;
   max-width: 1100px;
   margin: auto;
+  background: var(--bg-color);
 }
-
 .projects-section h2 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
   text-align: center;
   color: var(--accent-color);
 }
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
   gap: 2rem;
 }
-
 .project-card {
   background: var(--card-bg);
   border-radius: 10px;
@@ -253,29 +242,24 @@ input:checked + .slider:before {
   box-shadow: 0 0 15px var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .project-card:hover {
   box-shadow: 0 0 25px var(--accent-color);
   transform: translateY(-8px);
 }
-
 .project-card h3 {
   margin-bottom: 0.8rem;
   color: var(--accent-color);
 }
-
 .project-card p {
   font-size: 0.95rem;
   color: #ccc;
   margin-bottom: 1rem;
 }
-
 .project-card a {
   font-weight: 700;
   color: var(--accent-color);
   border-bottom: 1.5px solid transparent;
 }
-
 .project-card a:hover {
   border-color: var(--accent-color);
 }
@@ -288,14 +272,12 @@ input:checked + .slider:before {
   margin: auto;
   color: #c5f0e3;
 }
-
 .skills-section h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: var(--accent-color);
 }
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
@@ -303,19 +285,16 @@ input:checked + .slider:before {
   max-width: 800px;
   margin: 0 auto 3rem auto;
 }
-
 .skill {
   background: var(--card-bg);
   border-radius: 8px;
   padding: 1rem;
 }
-
 .skill h4 {
   margin-bottom: 0.4rem;
   font-weight: 600;
   color: var(--accent-color);
 }
-
 .skill-bar {
   width: 100%;
   background: var(--bar-bg);
@@ -323,20 +302,17 @@ input:checked + .slider:before {
   height: 12px;
   overflow: hidden;
 }
-
 .skill-bar .fill {
   height: 12px;
   background: var(--accent-color);
   width: 0;
   animation: fillBar 1.5s forwards;
 }
-
 @keyframes fillBar {
   to {
     width: var(--fill-width);
   }
 }
-
 .soft-skills {
   list-style: none;
   display: flex;
@@ -348,7 +324,6 @@ input:checked + .slider:before {
   max-width: 600px;
   color: #a6f5d4;
 }
-
 .soft-skills li {
   background: var(--soft-bg);
   padding: 0.4rem 1rem;
@@ -363,26 +338,23 @@ input:checked + .slider:before {
   max-width: 900px;
   margin: auto;
   color: #d1f5e3;
+  background: var(--bg-color);
 }
-
 .experience-section h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: var(--accent-color);
 }
-
 .timeline {
   border-left: 3px solid var(--accent-color);
   margin-left: 1rem;
   padding-left: 2rem;
 }
-
 .timeline-item {
   margin-bottom: 2rem;
   position: relative;
 }
-
 .timeline-item::before {
   content: "";
   position: absolute;
@@ -393,12 +365,10 @@ input:checked + .slider:before {
   background: var(--accent-color);
   border-radius: 50%;
 }
-
 .timeline-item h3 {
   margin-bottom: 0.3rem;
   color: #00cca8;
 }
-
 .timeline-date {
   font-size: 0.85rem;
   color: #7ee8c9;
@@ -415,25 +385,20 @@ input:checked + .slider:before {
   color: #a0f2d0;
   text-align: center;
 }
-
 body.light-mode .certifications-section {
   background: #e0f8ee;
   color: #007f5f;
 }
-
 .certifications-section h2 {
   color: var(--accent-color);
   margin-bottom: 1.5rem;
 }
-
 .certifications-section ul {
   list-style: none;
 }
-
 .certifications-section li {
   margin-bottom: 0.8rem;
 }
-
 .certifications-section a {
   color: var(--accent-color);
   font-weight: 700;
@@ -445,33 +410,29 @@ body.light-mode .certifications-section {
   max-width: 600px;
   margin: auto;
   color: #dbf9e7;
+  background: var(--bg-color);
 }
-
 .contact-section h2 {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
   color: var(--accent-color);
 }
-
 form {
   background: var(--input-bg);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 0 20px var(--shadow);
 }
-
 .form-group {
   margin-bottom: 1.2rem;
 }
-
 label {
   display: block;
   margin-bottom: 0.3rem;
   font-weight: 600;
   color: #98f5cd;
 }
-
 input,
 textarea {
   width: 100%;
@@ -488,19 +449,16 @@ body.light-mode textarea {
   background: #f5f5f5;
   color: #222;
 }
-
 input:focus,
 textarea:focus {
   outline: 2px solid #00dda9;
   background-color: #0a1f18;
   color: white;
 }
-
 .btn[type="submit"] {
   width: 100%;
   margin-top: 0.75rem;
 }
-
 .form-message {
   margin-top: 1rem;
   font-weight: 700;
@@ -513,7 +471,6 @@ textarea:focus {
   gap: 2.5rem;
   margin-top: 2rem;
 }
-
 .social-links a {
   font-weight: 700;
   font-size: 1.25rem;
@@ -524,7 +481,6 @@ textarea:focus {
   background-color: var(--soft-bg);
   transition: background-color 0.3s ease;
 }
-
 .social-links a:hover {
   background-color: var(--accent-color);
   color: var(--bg-color);
@@ -539,7 +495,7 @@ footer {
   color: #777;
 }
 
-/* Responsive for Home Section and Misc */
+/* Responsive */
 @media screen and (max-width: 768px) {
   .home-section {
     flex-direction: column;
@@ -552,7 +508,7 @@ footer {
     text-align: center;
   }
   .nav-links {
-    display: none; /* add a hamburger menu for mobile if needed */
+    display: none; /* add hamburger menu for mobile if needed */
   }
 }
 

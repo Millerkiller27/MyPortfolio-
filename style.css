@@ -88,18 +88,38 @@ a:hover {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
+/* UPDATED PROFILE PHOTO - FULLY RESPONSIVE */
 .profile-photo {
-  flex: 1 1 280px;
-  width: 40vw;
-  max-width: 200px;
-  height: 40vw;
-  max-height: 200px;
+  width: 25vw;           /* Fluid width: 25% of screen */
+  max-width: 250px;      /* Prevents being too big on desktop */
+  height: 25vw;          /* Keeps aspect ratio square */
+  max-height: 250px;     /* Prevents stretching on desktop */
   border-radius: 50%;
-  background-image: url('Image.jpg'); 
+  background-image: url('Image.jpg'); /* Ensure this matches your file name */
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 20px #00ffa2aa;
   animation: float 3s ease-in-out infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-photo {
+    width: 40vw;
+    max-width: 180px;
+    height: 40vw;
+    max-height: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profile-photo {
+    width: 50vw;
+    max-width: 140px;
+    height: 50vw;
+    max-height: 140px;
+  }
 }
 
 @keyframes float {
@@ -350,7 +370,7 @@ a:hover {
   margin-bottom: 1.5rem;
 }
 
-.certifications-section ul {
+certifications-section ul {
   list-style: none;
 }
 
@@ -456,7 +476,7 @@ footer {
   color: #777;
 }
 
-/* Responsive */
+/* Responsive for Home Section and Misc */
 @media screen and (max-width: 768px) {
   .home-section {
     flex-direction: column;
@@ -472,13 +492,7 @@ footer {
   }
 
   .nav-links {
-    display: none; /* later add hamburger menu for mobile */
-  }
-  @media screen and (max-width: 480px) {
-  .profile-photo {
-    max-width: 160px;
-    height: 160px;
+    display: none; /* add a hamburger menu here for mobile if needed */
   }
 }
 
-}

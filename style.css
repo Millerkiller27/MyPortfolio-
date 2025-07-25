@@ -1,29 +1,12 @@
 /* ─────────── CUSTOM PROPERTIES ─────────── */
-.btn {
-  background-color: var(--google-blue);
-  /* other styles */
-}
-.btn:hover {
-  background-color: var(--google-green);
-}
-
-/* Navigation links hover */
-.nav-link:hover,
-.nav-link.active {
-  color: var(--google-yellow);
-}
-
-/* Headings or section titles */
-h2 {
-  color: var(--google-red);
-}
-
-/* Links in certifications, contact, etc. */
-a {
-  color: var(--google-blue);
-}
-a:hover {
-  color: var(--google-red);
+:root {
+  --bg-color: #121212; /* default dark background */
+  --text-color: #e0e0e0;
+  --google-blue: #4285F4;     /* Google blue */
+  --google-red: #DB4437;      /* Google red */
+  --google-yellow: #F4B400;   /* Google yellow */
+  --google-green: #0F9D58;    /* Google green */
+  --accent-color: #4285F4;    /* default accent for headings/buttons, etc. */
 }
 
 

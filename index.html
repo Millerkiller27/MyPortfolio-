@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kushagra Bhardwaj | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">KB</div>
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#experience" class="nav-link">Experience</a></li>
+      <li><a href="#certifications" class="nav-link">Certifications</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="home" class="home-section">
+    <div class="profile-photo"></div>
+    <div class="intro-text">
+      <h1>Kushagra Bhardwaj</h1>
+      <h2><span id="animated-subtitle"></span></h2>
+      <p>
+        Final-year B.Tech (CSE – Cyber Security & Forensics) student specializing in infrastructure, cloud security, and detection engineering.
+      </p>
+      <a href="Kushagra_Bhardwaj_Resume.pdf" download class="btn">Download Résumé</a>
+    </div>
+  </header>
+
+  <section id="projects" class="projects-section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Jindal Hospital Website</h3>
+        <p>Patient booking, appointments, and hospital info portal.</p>
+        <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
+        <a href="https://github.com/Millerkiller27/HMS" target="_blank" rel="noopener">View Code</a>
+      </div>
+      <div class="project-card">
+        <h3>GeoScan – Info Gathering Tool</h3>
+        <p>C++ tool for network scanning and geolocation intel.</p>
+        <p><strong>Tech Stack:</strong> C++</p>
+        <a href="https://github.com/VedanshPundir/Minor1.git" target="_blank" rel="noopener">View Code</a>
+      </div>
+      <div class="project-card">
+        <h3>Secure Dashboard (Behavior Analysis)</h3>
+        <p>Real-time dashboard with 88% accurate threat detection.</p>
+        <p><strong>Tech Stack:</strong> React, TypeScript, Express</p>
+        <a href="https://github.com/Millerkiller27/Secure-dashboard" target="_blank" rel="noopener">View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <h4>Python</h4>
+        <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>JavaScript</h4>
+        <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>Linux & Network Tools</h4>
+        <div class="skill-bar"><div class="fill" style="width: 75%"></div></div>
+      </div>
+      <div class="skill">
+        <h4>Cloud Security (AWS basics)</h4>
+        <div class="skill-bar"><div class="fill" style="width: 60%"></div></div>
+      </div>
+    </div>
+    <h3>Soft Skills</h3>
+    <ul class="soft-skills">
+      <li>Teamwork</li>
+      <li>Leadership</li>
+      <li>Adaptability</li>
+      <li>Effective Communication</li>
+    </ul>
+  </section>
+
+  <section id="experience" class="experience-section">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Secretary, Cyber Sentinels Student Chapter</h3>
+        <span class="timeline-date">Apr 2024 – Present</span>
+        <p>Led budgeting and planning for major college events, including the All India Hackathon. Assigned team roles and ensured smooth execution through clear communication and collaboration.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Intern, CodeAlpha</h3>
+        <p>Created phishing awareness platform, reviewed Python code for vulnerabilities, collaborated on cloud-integrated projects.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Project Intern, IBM</h3>
+        <p>Developed secure access control for remote data centers. Configured authentication (MFA, VPN), session management, and risk analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications" class="certifications-section">
+    <h2>Certifications & Achievements</h2>
+    <ul>
+      <li>
+        <a href="https://pdf.ac/52EEQF" target="_blank" rel="noopener">CTF Participation Certificate</a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn">Send Message</button>
+      <p id="formMessage" class="form-message"></p>
+    </form>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/kushagrabhardwaj0127/" target="_blank" aria-label="LinkedIn" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Millerkiller27" target="_blank" aria-label="GitHub" rel="noopener">GitHub</a>
+      <a href="https://www.instagram.com/kushagra__0127/" target="_blank" aria-label="Instagram" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Kushagra Bhardwaj. All rights reserved.</p>
+  </footer>
+</body>
+</html>

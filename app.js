@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Simulate sending message (replace this part with your email API integration)
+    // Simulate sending message (replace with your own email API)
     messageEl.textContent = "Sending message...";
     messageEl.style.color = "#00ffa2";
 
@@ -58,4 +58,21 @@ window.addEventListener("DOMContentLoaded", () => {
       form.reset();
     }, 1500);
   });
+
+  // Light/Dark Mode Toggle
+  const toggle = document.getElementById('modeToggle');
+  if (localStorage.getItem('mode') === 'light') {
+    document.body.classList.add('light-mode');
+    toggle.checked = true;
+  }
+  toggle.addEventListener('change', () => {
+    if (toggle.checked) {
+      document.body.classList.add('light-mode');
+      localStorage.setItem('mode', 'light');
+    } else {
+      document.body.classList.remove('light-mode');
+      localStorage.setItem('mode', 'dark');
+    }
+  });
 });
+

@@ -90,8 +90,10 @@ a:hover {
 
 .profile-photo {
   flex: 1 1 280px;
-  max-width: 280px;
-  height: 280px;
+  width: 40vw;
+  max-width: 200px;
+  height: 40vw;
+  max-height: 200px;
   border-radius: 50%;
   background-image: url('Image.jpg'); 
   background-size: cover;
@@ -472,4 +474,11 @@ footer {
   .nav-links {
     display: none; /* later add hamburger menu for mobile */
   }
+  @media screen and (max-width: 480px) {
+  .profile-photo {
+    max-width: 160px;
+    height: 160px;
+  }
+}
+
 }
